@@ -1,0 +1,39 @@
+﻿@model Pinkleaf_Collection.Models.RegisterViewModel
+<link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="~/css/register.css" />
+
+
+<a asp-controller="Account" asp-action="Login" class="back-btn">◀</a>
+
+<div class="register-wrapper">
+    <div class="login-card">
+
+
+        <img src="~/images/logo.jpeg" class="login-logo" />
+        <h3>Create your account</h3>
+
+        <form asp-action="Register" method="post">
+
+            <label>Full Name</label>
+            <input asp-for="FullName" placeholder="Enter Name" />
+
+            <label>Address</label>
+            <input asp-for="Address" placeholder="Enter Address" />
+
+            <label>Email Address</label>
+            <input asp-for="Email" placeholder="Enter email" />
+
+            <label>Phone Number</label>
+            <input asp-for="Phone" placeholder="+91 xxxxx xxxxx" />
+
+            <label>Password</label>
+            <input asp-for="Password" type="password" placeholder="Enter password" />
+
+            <label>Confirm Password</label>
+            <input asp-for="ConfirmPassword" type="password" placeholder="Enter password" />
+
+            <button type="submit" class="login-btn">Sign up</button>
+        </form>
+
+    </div>
+</div>

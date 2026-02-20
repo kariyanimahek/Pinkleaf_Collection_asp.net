@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PinkLeaf</title>
+
+    <!-- Landing CSS only -->
+     <link rel="stylesheet" href="~/css/landing.css" asp-append-version="true" />
+    
+
+</head>
+<body>
+
+    <!-- HEADER -->
+   <header class="header">
+    <div class="header-container">
+        
+        <div class="logo">
+ <img src="/images/logo.jpeg" alt="logo">
+
+</div>
+
+
+        <div class="right-group">
+           <nav class="nav-links">
+    <a href="@Url.Action("Login","Account")">Home</a>
+    <a href="@Url.Action("Login","Account")">Retail</a>
+    <a href="@Url.Action("Login","Account")">Wholesale</a>
+</nav>
+
+
+            <div class="auth-buttons">
+                <a asp-controller="Account" asp-action="Login" class="login-btn">
+    Login
+</a>
+<a asp-controller="Account" asp-action="Register" class="signup-btn">
+    Sign Up
+</a>
+
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+    <!-- PAGE CONTENT -->
+    @RenderBody()
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;   // ❌ Header / Layout removed
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+
+    <!-- 🔙 BACK BUTTON -->
+    <a href="@Url.Action("Index","Home")" class="back-btn">
+        &#9664;
+    </a>
+
+    <!-- LOGIN CARD -->
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            <!-- LOGO -->
+            <img src="~/images/logo.jpeg" class="login-logo" />
+
+            <h3>Login to your account</h3>
+
+            <form method="post">
+
+                <label>Email Address</label>
+                <input type="email"
+       name="email"
+       placeholder="Enter email"
+       value="@ViewBag.Email"
+       required />
+
+
+                <label>Password</label>
+               <input type="password"
+           name="password"
+           placeholder="Enter password"
+           value="@ViewBag.Password"
+           required />
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+                <div class="or-line">
+                    <span>OR</span>
+                </div>
+
+                <a href="@Url.Action("Register","Account")" class="signup-btn">
+                    Sign up
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
