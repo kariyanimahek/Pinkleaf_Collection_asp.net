@@ -1,0 +1,377 @@
+﻿/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+    height: 40px;
+}
+
+/* RIGHT GROUP */
+.right-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+}
+
+    .nav-links a {
+        margin: 0 11px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #5a2d82;
+        text-decoration: none;
+    }
+
+        .nav-links a:hover {
+            color: #ff4f9a;
+        }
+
+/* AUTH BUTTONS */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.login-btn {
+    padding: 8px 18px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #555;
+}
+
+.signup-btn {
+    padding: 8px 18px;
+    background: linear-gradient(90deg, #ff2a7f, #ff5da2);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 12px rgba(255, 42, 127, 0.35);
+}
+
+/* HERO */
+.hero-section {
+    background: #e600a9;
+    color: white;
+    text-align: center;
+    padding: 70px 30px;
+}
+
+    .hero-section p {
+        margin: 12px 0;
+        font-size: 14px;
+    }
+
+/* HERO BUTTON */
+.shop-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 26px;
+    background: #ffffff;
+    color: #e600a9;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+    .shop-btn:hover {
+        background: #ff2a7f;
+        color: #ffffff;
+    }
+
+/* SHOPPING MODE */
+.shopping-mode {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.mode-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.mode-card {
+    flex: 1;
+    max-width: 350px;
+    height: 240px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* IMAGES */
+.retail-card {
+    background-image: url('/images/retail.png');
+}
+
+.wholesale-card {
+    background-image: url('/images/wholesale.png');
+}
+
+/* OVERLAY */
+.mode-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.overlay {
+    position: relative;
+    padding: 20px;
+    z-index: 2;
+}
+
+/* UNIVERSAL CTA BUTTON */
+
+
+/* COMMON BUTTON STYLE */
+.cta-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 26px;
+    background: #ffffff; /* button white */
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+    position: relative;
+}
+
+/* RETAIL → PINK TEXT */
+.retail-btn {
+    color: #ff2a7f;
+}
+
+/* WHOLESALE → BLUE TEXT */
+.wholesale-btn {
+    color: #3b6cff;
+}
+
+/* HOVER EFFECT */
+.cta-btn:hover {
+    transform: scale(1.05);
+    background: #ffffff;
+}
+
+/* INFO CARDS */
+.info-cards-section {
+    padding: 40px 20px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: #eeeeee;
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+    .info-card h4 {
+        margin-bottom: 8px;
+    }
+
+    .info-card span {
+        display: block;
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px;
+    }
+
+/* TITLES */
+.retail-title {
+    color: #ff2a7f;
+}
+
+.wholesale-title {
+    color: blue;
+}
+
+.both-title {
+    color: green;
+}
+
+/* RETAIL COLLECTIONS */
+.retail-collections {
+    padding: 30px 20px;
+}
+
+    .retail-collections h3 {
+        text-align: center;
+    }
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* HORIZONTAL SCROLL */
+.scroll-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+    .scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
+.card {
+    min-width: 160px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card h4 {
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+.scroll-container a.card {
+    text-decoration: none;
+    display: block;
+}
+
+
+/* WHY US */
+.why-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-heading {
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+.why-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    background: #e5e5e5;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+    .why-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* FOOTER */
+.footer-cta {
+    background: #ff66cc; /* pink background */
+    padding: 35px 20px; /* 🔽 space kam */
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Heading */
+.footer-cta h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px; /* 🔽 gap kam */
+}
+
+/* Subtitle */
+.footer-cta p {
+    font-size: 15px;
+    margin-bottom: 18px; /* 🔽 gap kam */
+    opacity: 0.95;
+}
+
+/* CONTACT SECTION */
+.footer-contact {
+    text-align: center; /* ✅ center text */
+    max-width: 100%;
+    margin: 0 auto; /* ❌ extra top margin removed */
+}
+
+    .footer-contact h4 {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        letter-spacing: 1px;
+    }
+
+    .footer-contact p {
+        font-size: 14px;
+        margin: 3px 0; /* 🔽 vertical spacing kam */
+        opacity: 0.9;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-cta {
+        padding: 30px 15px;
+    }
+}

@@ -1,0 +1,118 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 22px;
+    color: #ff2a7f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CENTER WRAPPER */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CARD */
+.login-card {
+    background: #ffffff;
+    width: 420px;
+    padding: 30px 40px; /* ⬅ padding kam ki */
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* LOGO */
+.login-logo {
+    width: 70px; /* ⬅ thoda chota */
+    margin: 0 auto 8px; /* ⬅ upar ka space remove */
+    display: block;
+}
+
+/* HEADING */
+.login-card h3 {
+    margin-top: 5px; /* ⬅ logo ke niche ka gap kam */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* FORM */
+.login-card label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    background: #ff2a7f;
+    color: #fff;
+    border: none;
+    padding: 11px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+    .login-btn:hover {
+        background: #e6006e;
+    }
+
+/* OR LINE */
+.or-line {
+    display: flex;
+    align-items: center;
+    margin: 15px 0; /* ⬅ thoda compact */
+}
+
+    .or-line::before,
+    .or-line::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #ccc;
+    }
+
+    .or-line span {
+        padding: 0 10px;
+        font-size: 13px;
+        color: #777;
+    }
+
+/* SIGNUP BUTTON */
+.signup-btn {
+    display: block;
+    background: #ff2a7f;
+    color: #fff;
+    padding: 11px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    .signup-btn:hover {
+        background: #e6006e;
+    }

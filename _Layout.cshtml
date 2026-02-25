@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/home.css" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pinkleaf Collection</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ================= PREMIUM HEADER ================= -->
+    <header class="premium-header">
+        <div class="header-wrapper">
+
+    <div class="logo">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/images/logo.jpeg" />
+        </a>
+    </div>
+
+    <div class="right-section">
+
+        <nav class="nav-menu">
+            <a asp-controller="UserHome" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="Retail">Retail</a>
+            <a asp-controller="Home" asp-action="Wholesale">Wholesale</a>
+        </nav>
+
+        <a class="icon"><i class="fa-solid fa-user"></i></a>
+
+<a class="icon"><i class="fa-solid fa-shopping-cart"></i></a>
+
+<a asp-controller="Home" asp-action="Logout" class="logout-btn">
+    Logout
+</a>
+
+
+    </div>
+
+</div>
+
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- ================= PREMIUM FOOTER ================= -->
+    <footer class="premium-footer">
+        <div class="footer-inner">
+            <h3>Ready to Upgrade Your Wardrobe?</h3>
+            <p>Join thousands of satisfied customers and discover your perfect style</p>
+
+            <div class="footer-contact">
+                <h5>CONTACT US</h5>
+                <p>+91 82389 45773</p>
+                <p>kariyadivyesh@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
