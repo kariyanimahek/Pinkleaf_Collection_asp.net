@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "AdminLayout";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="~/css/admin.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="admin-container">
+
+        @await Html.PartialAsync("~/Views/Admin/_AdminTopbar.cshtml")
+
+        <div class="admin-body">
+
+            @await Html.PartialAsync("~/Views/Admin/_AdminSidebar.cshtml")
+
+            <div class="admin-main">
+                <div class="admin-content">
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
