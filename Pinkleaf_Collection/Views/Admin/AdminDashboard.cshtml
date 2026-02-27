@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "AdminDashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Dashboard</h2>
+
+<div class="admin-cards">
+    <div class="card">
+        <div class="card-header">
+            <span class="card-icon">👕</span>
+            <h3>54</h3>
+        </div>
+        <p>Total products</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-icon">📦</span>
+            <h3>3</h3>
+        </div>
+        <p>Total orders</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-icon">👤</span>
+            <h3>10</h3>
+        </div>
+        <p>Total users</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <span class="card-icon">📊</span>
+            <h3>1,650</h3>
+        </div>
+        <p>Revenue</p>
+    </div>
+</div>
+
+<h2>Recent Orders</h2>
+
+<div class="admin-table">
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Customer</th>
+                <th>Address</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>T-shirt</td>
+                <td>Amit Varma</td>
+                <td>Street 3, Rajkot</td>
+                <td>950</td>
+                <td class="delivered">Delivered</td>
+            </tr>
+
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>Kurti</td>
+                <td>Aditi Sharma</td>
+                <td>Street 2, Rajkot</td>
+                <td>800</td>
+                <td class="pending">Pending</td>
+            </tr>
+
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>Jeans</td>
+                <td>Riya Mehta</td>
+                <td>Street 1, Rajkot</td>
+                <td>499</td>
+                <td class="delivered">Delivered</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "ProductList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Product List</h2>
+
+<div class="admin-table">
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>T-shirt</td>
+                <td>White T-Shirt</td>
+                <td>700</td>
+                <td>
+                    <div class="action-column">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>Kurti</td>
+                <td>Fancy Kurti</td>
+                <td>800</td>
+                <td>
+                    <div class="action-column">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>Western Wear</td>
+                <td>Blue Dress</td>
+                <td>900</td>
+                <td>
+                    <div class="action-column">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>                
+                </td>
+            </tr>
+
+            <tr>
+                <td><img src="https://via.placeholder.com/50" /></td>
+                <td>Jeans</td>
+                <td>Blue Baggy Jeans</td>
+                <td>499</td>
+                <td>
+                     <div class="action-column">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                     </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
