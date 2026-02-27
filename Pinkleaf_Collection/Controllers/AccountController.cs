@@ -32,7 +32,10 @@ namespace Pinkleaf_Collection.Controllers
 
             return View(model);
         }
-
+                public IActionResult Register()
+        {
+            return View();
+        }
 
       
         }
