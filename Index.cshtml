@@ -1,15 +1,12 @@
 ﻿@{
-    Layout = "LandingLayout";
-    
+    ViewBag.Title = "Home";
 }
-
-
 
 <!-- HERO SECTION -->
 <section class="hero-section">
     <h2>Premium collection for Women</h2>
     <p>Discover our curated collection of stylish, comfortable clothing designed exclusively for modern women</p>
-   <a href="@Url.Action("Login","Account")" class="cta-btn">
+    <a asp-controller="UserHome" asp-action="Retail" class="cta-btn">
     Shop Now
 </a>
 
@@ -20,18 +17,16 @@
     <h3>Choose Your Shopping Mode</h3>
     <p>Shop as a retailer or explore our wholesale opportunities</p>
 
-    <!-- 🔥 IMPORTANT WRAPPER -->
     <div class="mode-cards">
 
         <div class="mode-card retail-card">
             <div class="overlay">
                 <h4>Retail Shopping</h4>
                 <p>Premium individual products with fast delivery</p>
-        <a asp-controller="Account" asp-action="Login" class="cta-btn">
-    Shop Now
-</a>
-
-
+                <a asp-controller="Home" asp-action="Retail" class="cta-btn">
+                    Shop Now
+                </a>
+                
             </div>
         </div>
 
@@ -39,16 +34,15 @@
             <div class="overlay">
                 <h4>Wholesale</h4>
                 <p>Bulk order with competitive pricing & support</p>
-        <a asp-controller="Account" asp-action="Login" class="cta-btn">
-    Explore
-</a>
-
-
+                <a asp-controller="Home" asp-action="Wholesale" class="cta-btn">
+                    Explore
+                </a>
             </div>
         </div>
 
     </div>
 </section>
+
 <section class="info-cards-section">
     <div class="info-cards">
 
@@ -79,39 +73,29 @@
     </div>
 </section>
 
-
-<!-- RETAIL COLLECTIONS -->
 <section class="retail-collections">
     <h3>Retail Collections</h3>
     <p class="subtitle">Explore our individual product range</p>
 
     <div class="scroll-container">
-
-        <a href="@Url.Action("Login","Account")" class="card">
+        <a href="@Url.Action("Retail")" class="card">
             <img src="~/images/tishrt.png" />
         </a>
-
-        <a href="@Url.Action("Login","Account")" class="card">
+        <a href="@Url.Action("Retail")" class="card">
             <img src="~/images/jeans.png" />
         </a>
-
-        <a href="@Url.Action("Login","Account")" class="card">
+        <a href="@Url.Action("Retail")" class="card">
             <img src="~/images/western.png" />
         </a>
-
-        <a href="@Url.Action("Login","Account")" class="card">
+        <a href="@Url.Action("Retail")" class="card">
             <img src="~/images/cordset.png" />
         </a>
-
-        <a href="@Url.Action("Login","Account")" class="card">
+        <a href="@Url.Action("Retail")" class="card">
             <img src="~/images/kurti.png" />
         </a>
-
     </div>
 </section>
 
-
-<!-- WHY SHOP WITH US -->
 <section class="why-us">
     <h3 class="why-heading">Why Shop With Us?</h3>
 
@@ -132,17 +116,3 @@
         </div>
     </div>
 </section>
-<!-- FOOTER CTA -->
-<section class="footer-cta">
-    <div class="footer-content">
-        <h3>Ready to Upgrade Your Wardrobe?</h3>
-        <p>Join thousands of satisfied customers and discover your perfect style</p>
-
-        <div class="footer-contact">
-            <h4>CONTACT US</h4>
-            <p>Contact Number : +91 82389 45773</p>
-            <p>kariyadivyesh@gmail.com</p>
-        </div>
-    </div>
-</section>
-

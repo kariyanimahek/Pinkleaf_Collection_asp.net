@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+}
+
+<link rel="stylesheet" href="~/css/checkout.css" />
+
+<section class="checkout-section">
+
+    <h2>Checkout</h2>
+
+    <!-- ================= ORDER SUMMARY ================= -->
+    <div class="order-summary">
+
+        <h3>Order Summary</h3>
+
+        <div class="pink-line"></div>
+
+        <div id="order-items"></div>
+
+        <div class="divider-line"></div>
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="subtotal">₹ 0</span>
+        </div>
+
+        <div class="summary-line">
+            <span>Delivery Charge</span>
+            <span id="delivery">₹ 50</span>
+        </div>
+
+        <div class="summary-line grand-total">
+            <span>Grand Total</span>
+            <span id="grand-total">₹ 0</span>
+        </div>
+
+       <a href="/UserHome/OrderSuccess" class="place-order-btn">
+    Place Order
+</a>
+
+    </div>
+
+
+    <!-- ================= SHIPPING DETAILS ================= -->
+    <div class="shipping-card">
+
+        <h3 class="shipping-title">
+            🚚 Shipping Information
+        </h3>
+
+        <div class="shipping-field">
+            <span>Full Name</span>
+            <input type="text"
+                   value="@Context.Session.GetString("UserName")"
+                   readonly />
+        </div>
+
+        <div class="shipping-field">
+            <span>Phone Number</span>
+            <input type="text"
+                   value="@Context.Session.GetString("UserPhone")"
+                   readonly />
+        </div>
+
+        <div class="shipping-field">
+            <span>Shipping Address</span>
+            <textarea readonly>
+@Context.Session.GetString("UserAddress")
+            </textarea>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", loadCheckout);
+
+function loadCheckout() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let orderContainer = document.getElementById("order-items");
+
+    let subtotal = 0;
+    let deliveryCharge = 50;
+
+    orderContainer.innerHTML = "";
+
+    if (cart.length === 0) {
+        orderContainer.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    cart.forEach(item => {
+
+        let quantity = item.quantity || 1;
+        subtotal += item.price * quantity;
+
+        orderContainer.innerHTML += `
+            <div class="order-item">
+                <img src="${item.image}" />
+                <div>
+                    <h4>${item.name}</h4>
+                    <p>Qty: ${quantity}</p>
+                </div>
+                <span>₹ ${item.price * quantity}</span>
+            </div>
+        `;
+    });
+
+    document.getElementById("subtotal").innerText = "₹ " + subtotal;
+    document.getElementById("grand-total").innerText =
+        "₹ " + (subtotal + deliveryCharge);
+}
+
+</script>
+
+<script>
+
+document.querySelector(".place-order-btn").addEventListener("click", function () {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    // user email (session se)
+    let userEmail = "@Context.Session.GetString("UserEmail")";
+
+    // old orders load karo
+    let allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    // new order object
+    let newOrder = {
+        orderId: "ORD" + Date.now(),
+        user: userEmail,
+        items: cart,
+        date: new Date().toLocaleDateString(),
+        status: "Placed"
+    };
+
+    // save order
+    allOrders.push(newOrder);
+    localStorage.setItem("orders", JSON.stringify(allOrders));
+
+    // cart clear
+    localStorage.removeItem("cart");
+
+    // redirect success page
+    window.location.href = "/Home/OrderSuccess";
+});
+
+</script>
+

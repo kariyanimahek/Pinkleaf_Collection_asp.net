@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/account.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<div class="account-bg">
+
+    <!-- Back Button -->
+    <a href="/UserHome/Index" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <!-- Heading -->
+    <h1 class="account-heading">My Account</h1>
+
+    <div class="account-container">
+
+        <!-- Profile Icon -->
+        <div class="profile-circle">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <!-- ACCOUNT DETAILS -->
+        <div class="account-details">
+
+            <!-- IDs added for dynamic update -->
+            <h3 id="acc-name">@ViewBag.Name</h3>
+
+            <p class="detail" id="acc-address">@ViewBag.Address</p>
+            <p class="detail" id="acc-email">@ViewBag.Email</p>
+            <p class="detail" id="acc-phone">@ViewBag.Phone</p>
+
+        </div>
+
+        <div class="pink-divider"></div>
+
+        <!-- BUTTONS -->
+        <div class="action-buttons">
+
+            <a href="/UserHome/EditProfile" class="btn-pink">
+                <i class="fa fa-user"></i> Edit Profile
+            </a>
+
+            <a href="/UserHome/MyOrders" class="btn-pink">
+                <i class="fa fa-shopping-bag"></i> My Orders
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ===============================
+   LOAD UPDATED PROFILE DATA
+================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let profile = JSON.parse(localStorage.getItem("userProfile"));
+
+    // Agar edit profile se updated data hai
+    if (profile) {
+
+        document.getElementById("acc-name").innerText = profile.name;
+        document.getElementById("acc-email").innerText = profile.email;
+        document.getElementById("acc-phone").innerText = profile.phone;
+        document.getElementById("acc-address").innerText = profile.address;
+    }
+
+});
+
+</script>

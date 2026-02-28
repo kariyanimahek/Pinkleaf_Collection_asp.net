@@ -1,0 +1,113 @@
+﻿/* ================= PAGE ================= */
+
+.orders-section {
+    padding: 30px 10%;
+    background: #fff5f9;
+    min-height: 80vh;
+}
+
+    .orders-section h2 {
+        text-align: center;
+        color: #d63384;
+        margin-bottom: 30px;
+    }
+
+
+/* ================= ORDER CARD ================= */
+
+.order-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.order-date {
+    color: #ff1493;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* ================= ORDER ITEM ================= */
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+    /* IMAGE */
+    .order-item img {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+
+/* LEFT SIDE INFO */
+
+.item-info {
+    flex: 1;
+}
+
+    .item-info h4 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+/* Qty + Size + Price line */
+.item-meta {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.meta-space {
+    margin-left: 10px;
+}
+
+
+/* RIGHT SIDE STATUS */
+
+.item-status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Pending */
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Delivered */
+.status-delivered {
+    background: #d4edda;
+    color: #155724;
+}
+
+
+/* ================= DIVIDER ================= */
+
+.order-divider {
+    height: 2px;
+    width: 60%;
+    background: #ffd1e6;
+    margin: 25px auto;
+    border-radius: 3px;
+}
+
+
+/* ================= EMPTY ================= */
+
+.no-order {
+    text-align: center;
+    color: #888;
+    margin-top: 40px;
+}

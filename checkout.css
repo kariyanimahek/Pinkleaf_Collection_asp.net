@@ -1,0 +1,135 @@
+﻿.checkout-section {
+    padding: 30px 10%;
+    background: #fff5f9;
+    min-height: 70vh;
+}
+
+    .checkout-section h2 {
+        text-align: center;
+        font-size: 28px;
+        color: #d63384;
+        margin-bottom: 25px;
+    }
+
+/* ================= ORDER SUMMARY ================= */
+
+.order-summary {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.pink-line {
+    height: 1.5px;
+    width: 100%;
+    background: #eee;
+    margin-bottom: 25px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+    .order-item img {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .order-item div {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+.divider-line {
+    height: 1.5px;
+    background: #eee;
+    margin: 25px 0;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.grand-total {
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 15px;
+    color: #d63384;
+}
+
+.place-order-btn {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 12px 35px;
+    background: #ff1493;
+    color: white;
+    font-size: 15px;
+    border-radius: 8px;
+    text-align: center; /* ✅ text center */
+    text-decoration: none; /* ✅ underline removed */
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+    .place-order-btn:hover {
+        background: #d63384;
+    }
+
+
+/* ================= SHIPPING CARD ================= */
+
+.shipping-card {
+    background: linear-gradient(180deg,#ffe6f0,#ffd6e7);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.shipping-title {
+    text-align: center;
+    color: #ff1493;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.shipping-field {
+    display: flex;
+    align-items: center;
+    background: #fff0f6;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+    .shipping-field span {
+        width: 170px;
+        font-weight: 600;
+        color: #d63384;
+        font-size: 14px;
+    }
+
+    .shipping-field input,
+    .shipping-field textarea {
+        border: none;
+        background: transparent;
+        width: 100%;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .shipping-field textarea {
+        resize: none;
+    }

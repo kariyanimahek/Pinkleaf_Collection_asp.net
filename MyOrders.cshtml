@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "My Orders";
+}
+
+<link rel="stylesheet" href="~/css/myorders.css" />
+
+<section class="orders-section">
+
+    <h2>My Orders</h2>
+
+    <div id="orders-container"></div>
+
+</section>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", loadOrders);
+
+function loadOrders() {
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    let userEmail = "@Context.Session.GetString("UserEmail")";
+
+    let container = document.getElementById("orders-container");
+    container.innerHTML = "";
+
+    let userOrders = orders.filter(o => o.user === userEmail);
+
+    if (userOrders.length === 0) {
+        container.innerHTML = "<p class='no-order'>No orders yet.</p>";
+        return;
+    }
+
+    userOrders.reverse().forEach((order, index) => {
+
+        let itemsHtml = "";
+
+        order.items.forEach(item => {
+
+            itemsHtml += `
+                <div class="order-item">
+
+                    <img src="${item.image}" />
+
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+
+                        <p class="item-meta">
+                            Qty: ${item.quantity}
+                            <span class="meta-space"></span>
+                            Size: ${item.size || "M"}
+                            <span class="meta-space"></span>
+                            ₹ ${item.price * item.quantity}
+                        </p>
+                    </div>
+
+                    <div class="item-status 
+                        ${order.status === 'Delivered'
+                            ? 'status-delivered'
+                            : 'status-pending'}">
+
+                        ${order.status}
+                    </div>
+
+                </div>
+            `;
+        });
+
+        container.innerHTML += `
+            <div class="order-card">
+                <p class="order-date">${order.date}</p>
+                ${itemsHtml}
+            </div>
+        `;
+
+        /* Pink divider between orders */
+        if (index !== userOrders.length - 1) {
+            container.innerHTML += `<div class="order-divider"></div>`;
+        }
+
+    });
+}
+
+</script>

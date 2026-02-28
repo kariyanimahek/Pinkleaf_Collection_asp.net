@@ -1,0 +1,126 @@
+﻿.cart-section {
+    padding: 40px 80px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+    .cart-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        text-align: center; /* CENTER HEADING */
+        color: #d63384; /* Checkout page heading color */
+    }
+
+/* Cart Item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+    .cart-item img {
+        width: 120px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+.item-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+    .item-details h4 {
+        margin-bottom: 8px;
+    }
+
+    .item-details p {
+        color: gray;
+        margin-bottom: 10px;
+    }
+
+/* Quantity */
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+    .qty-box button {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: #eee;
+        cursor: pointer;
+    }
+
+    .qty-box span {
+        font-weight: bold;
+    }
+
+/* Remove */
+.remove-btn {
+    background: #f5d6e5;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ff1493;
+}
+
+    .remove-btn:hover {
+        background: #ff1493;
+        color: white;
+    }
+
+/* Price */
+.item-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Total Section */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #e5cce0;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#total-price {
+    color: #ff1493;
+}
+
+/* Checkout Button */
+.checkout-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.checkout-btn {
+    display: block;
+    margin: 25px auto 0; /* CENTER BUTTON */
+    padding: 12px 35px;
+    border: none;
+    background: #ff1493; /* Checkout theme color */
+    color: white;
+    font-size: 15px;
+    border-radius: 8px; /* Same as place order button */
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+    .checkout-btn:hover {
+        background: #d63384; /* Hover color same as checkout page */
+    }
