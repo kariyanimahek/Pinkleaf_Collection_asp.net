@@ -25,29 +25,27 @@ namespace Pinkleaf_Collection.Controllers
         public IActionResult Login(string email, string password)
         {
             var user = _context.Users
-                .FirstOrDefault(x => x.Email == email && x.Password == password);
+                .FirstOrDefault(u => u.Email == email && u.Password == password);
 
             if (user != null)
             {
-                // ✅ ALL SESSION VALUES SET KARO
-                HttpContext.Session.SetString("UserName", user.Name ?? "");
-                HttpContext.Session.SetString("UserEmail", user.Email ?? "");
+                // ✅ OLD SESSION CLEAR
+                HttpContext.Session.Clear();
+
+                // ✅ NEW USER SESSION SET
+                HttpContext.Session.SetInt32("UserId", user.Id);
+                HttpContext.Session.SetString("UserName", user.Name);
+                HttpContext.Session.SetString("UserEmail", user.Email);
                 HttpContext.Session.SetString("UserPhone", user.Phone ?? "");
                 HttpContext.Session.SetString("UserAddress", user.Address ?? "");
 
-                if (user.Email == "admin@gmail.com")
-                {
-                    return RedirectToAction("Dashboard", "Admin");
-                }
-                else
-                {
-                    return RedirectToAction("Index", "UserHome");
-                }
+                return RedirectToAction("Index", "UserHome");
             }
 
-            ViewBag.Error = "Invalid Email or Password";
+            ViewBag.Error = "Invalid Login";
             return View();
         }
+
 
         // ================= REGISTER =================
 

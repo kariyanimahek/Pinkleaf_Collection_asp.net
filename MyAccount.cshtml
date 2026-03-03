@@ -53,26 +53,3 @@
 
 </div>
 
-
-<script>
-
-/* ===============================
-   LOAD UPDATED PROFILE DATA
-================================*/
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    let profile = JSON.parse(localStorage.getItem("userProfile"));
-
-    // Agar edit profile se updated data hai
-    if (profile) {
-
-        document.getElementById("acc-name").innerText = profile.name;
-        document.getElementById("acc-email").innerText = profile.email;
-        document.getElementById("acc-phone").innerText = profile.phone;
-        document.getElementById("acc-address").innerText = profile.address;
-    }
-
-});
-
-</script>

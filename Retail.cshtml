@@ -1,4 +1,169 @@
 ﻿@{
     ViewData["Title"] = "Retail";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<link rel="stylesheet" href="~/css/retail.css" />
+
+<section class="shop-section">
+    <h2>Shop Collection</h2>
+    <p>Discover our latest collection</p>
+
+    <!-- Category Buttons -->
+    <div class="category-buttons">
+        <button onclick="filterProducts('all', event)" class="active">All Products</button>
+        <button onclick="filterProducts('tshirt', event)">T-Shirts</button>
+        <button onclick="filterProducts('jeans', event)">Jeans</button>
+        <button onclick="filterProducts('cordset', event)">Cord Set</button>
+        <button onclick="filterProducts('western', event)">Western Wear</button>
+        <button onclick="filterProducts('kurti', event)">Kurti</button>
+    </div>
+
+    <!-- Products -->
+    <div class="product-container">
+
+        <div class="product-card tshirt">
+            <img src="/images/tshirt1.jpg" />
+            <h4>T-Shirt</h4>
+            <p class="desc">Soft Cotton • Casual Wear • Trendy Look</p>
+            <span class="price">₹ 600</span>
+            <button class="buy-btn"
+                    data-name="T-Shirt"
+                    data-price="600"
+                    data-image="/images/tshirt1.jpg">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="product-card kurti">
+            <img src="/images/kurti1.png" />
+            <h4>Kurti</h4>
+            <p class="desc">Elegant Design • Daily Wear • Comfort Fit</p>
+            <span class="price">₹ 800</span>
+            <button class="buy-btn"
+                    data-name="Kurti"
+                    data-price="800"
+                    data-image="/images/kurti1.png">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="product-card jeans">
+            <img src="/images/jeans1.png" />
+            <h4>Jeans</h4>
+            <p class="desc">Elegant Design • Daily Wear • Comfort Fit</p>
+            <span class="price">₹ 800</span>
+            <button class="buy-btn"
+                    data-name="jeans"
+                    data-price="800"
+                    data-image="/images/jeans1.png">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="product-card cordset">
+            <img src="/images/cordset1.jpg" />
+            <h4>Cord Set</h4>
+            <p class="desc">Matching Set • Modern Style • Party Wear</p>
+            <span class="price">₹ 2000</span>
+            <button class="buy-btn"
+                    data-name="Cord Set"
+                    data-price="2000"
+                    data-image="/images/cordset1.jpg">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="product-card western">
+            <img src="https://images.pexels.com/photos/12820465/pexels-photo-12820465.jpeg" />
+            <h4>Western Wear</h4>
+            <p class="desc">Chic Look • Stylish Fit • Premium Fabric</p>
+            <span class="price">₹ 1800</span>
+            <button class="buy-btn"
+                    data-name="Western Wear"
+                    data-price="1800"
+                    data-image="https://images.pexels.com/photos/12820465/pexels-photo-12820465.jpeg">
+                Buy Now
+            </button>
+        </div>
+
+        <div class="product-card tishrt">
+            <img src="" />
+            <h4>Tishrt</h4>
+            <p class="desc">Elegant Design • Daily Wear • Comfort Fit</p>
+            <span class="price">₹ 1800</span>
+            <button class="buy-btn"
+                    data-name="tishrt"
+                    data-price="800"
+                    data-image="">
+                Buy Now
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Clear cart automatically when page loads (so no default item)
+    if (!localStorage.getItem("cart")) {
+        localStorage.setItem("cart", JSON.stringify([]));
+    }
+
+    const buttons = document.querySelectorAll(".buy-btn");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            let name = this.getAttribute("data-name");
+            let price = parseInt(this.getAttribute("data-price"));
+            let image = this.getAttribute("data-image");
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push({
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1
+            });
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(name + " added to cart successfully!");
+        });
+
+    });
+
+});
+
+
+function filterProducts(category, event) {
+
+    var products = document.getElementsByClassName("product-card");
+    var buttons = document.querySelectorAll(".category-buttons button");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    if (event) {
+        event.target.classList.add("active");
+    }
+
+    for (var i = 0; i < products.length; i++) {
+
+        if (category == "all") {
+            products[i].style.display = "block";
+        }
+        else {
+            if (products[i].classList.contains(category)) {
+                products[i].style.display = "block";
+            } else {
+                products[i].style.display = "none";
+            }
+        }
+    }
+}
+
+</script>
