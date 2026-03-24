@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<link rel="stylesheet" href="~/css/cart.css" />
+
+<section class="cart-section">
+    <h2>Shopping cart</h2>
+
+    <div id="cart-container"></div>
+
+    <div class="cart-total">
+        <h3>Total</h3>
+        <h3 id="total-price">₹ 0</h3>
+    </div>
+
+ <div class="checkout-btn-container">
+    <a asp-controller="UserHome" asp-action="Checkout" class="checkout-btn">
+        Proceed to checkout
+    </a>
+</div>
+
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", loadCart);
+
+function loadCart() {
+    renderCart();
+}
+
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function renderCart() {
+
+    const container = document.getElementById("cart-container");
+    const totalElement = document.getElementById("total-price");
+
+    let cart = getCart();
+    let total = 0;
+
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        totalElement.innerText = "₹ 0";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+
+        item.quantity = item.quantity || 1;
+        total += item.price * item.quantity;
+
+        container.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" />
+
+                <div class="item-details">
+                    <h4>${item.name}</h4>
+                    <p>Size: L</p>
+
+                    <div class="qty-box">
+                        <button onclick="changeQty(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQty(${index}, 1)">+</button>
+                    </div>
+
+                    <button class="remove-btn" onclick="removeItem(${index})">
+                        Remove
+                    </button>
+                </div>
+
+                <div class="item-price">
+                    ₹ ${item.price * item.quantity}
+                </div>
+            </div>
+        `;
+    });
+
+    totalElement.innerText = "₹ " + total;
+}
+
+function changeQty(index, value) {
+
+    let cart = getCart();
+
+    cart[index].quantity += value;
+
+    if (cart[index].quantity < 1) {
+        cart[index].quantity = 1;
+    }
+
+    saveCart(cart);
+    renderCart();
+}
+
+function removeItem(index) {
+
+    let cart = getCart();
+    cart.splice(index, 1);
+
+    saveCart(cart);
+    renderCart();
+}
+
+</script>
+
