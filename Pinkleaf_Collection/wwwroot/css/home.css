@@ -1,0 +1,251 @@
+﻿/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+    width: 100%;
+    min-height: 330px;
+    background: linear-gradient(90deg, #e600a9, #ff4fa3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+    .hero-section h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .hero-section p {
+        max-width: 720px;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+        opacity: 0.95;
+    }
+
+    .hero-section .cta-btn {
+        background: #ff7ac8;
+        color: #ffffff;
+        padding: 12px 36px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+
+        .hero-section .cta-btn:hover {
+            background: #ffffff;
+            color: #e600a9;
+        }
+
+/* ================= SHOPPING MODE ================= */
+.shopping-mode {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+    .shopping-mode h3 {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .shopping-mode p {
+        font-size: 14px;
+        color: #555;
+    }
+
+.mode-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.mode-card {
+    flex: 1;
+    max-width: 360px;
+    height: 240px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.retail-card {
+    background-image: url('/images/retail.png');
+}
+
+.wholesale-card {
+    background-image: url('/images/wholesale.png');
+}
+
+.mode-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.overlay {
+    position: relative;
+    padding: 20px;
+    z-index: 2;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 26px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #e600a9;
+}
+
+    .cta-btn:hover {
+        transform: scale(1.05);
+    }
+
+/* ================= INFO CARDS ================= */
+.info-cards-section {
+    padding: 45px 20px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: #eeeeee;
+    padding: 25px;
+    width: 260px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+    .info-card span {
+        display: block;
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px;
+    }
+
+.retail-title {
+    color: #ff2a7f;
+}
+
+.wholesale-title {
+    color: #3b6cff;
+}
+
+.both-title {
+    color: green;
+}
+
+/* ================= RETAIL COLLECTIONS ================= */
+.retail-collections {
+    padding: 40px 20px;
+}
+
+    .retail-collections h3 {
+        text-align: center;
+    }
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+    .scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
+.card {
+    min-width: 160px;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+/* ================= WHY US ================= */
+.why-us {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-heading {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.why-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    background: #e5e5e5;
+    padding: 25px;
+    border-radius: 18px;
+    max-width: 340px;
+    transition: 0.3s ease;
+}
+
+    .why-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .mode-cards {
+        flex-direction: column;
+    }
+
+    .hero-section h2 {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,79 @@
+﻿.page-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* BOX */
+
+.product-box {
+    width: 420px;
+}
+
+    /* LABEL */
+
+    .product-box label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    /* INPUT */
+
+    .product-box input,
+    .product-box select {
+        width: 100%;
+        padding: 9px;
+        margin-top: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+/* 🔥 SIZE SECTION FINAL FIX */
+
+.sizes {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.size-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+/* UPLOAD */
+
+.upload-text {
+    margin-top: 15px;
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    padding: 25px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+    .upload-box input {
+        margin-bottom: 6px;
+    }
+
+/* BUTTON */
+
+.add-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 11px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .add-btn:hover {
+        background: #d81b60;
+    }

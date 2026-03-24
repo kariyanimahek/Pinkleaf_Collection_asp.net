@@ -1,0 +1,75 @@
+﻿.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* MAIN BOX */
+
+.table-box {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;
+}
+
+/* HEADER */
+
+.table-header {
+    display: grid;
+    grid-template-columns: 140px 160px 220px 140px 120px 150px;
+    background: #e0e0e0;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* ROW */
+
+.table-row {
+    display: grid;
+    grid-template-columns: 140px 160px 220px 140px 120px 150px;
+    align-items: center;
+    padding: 15px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* BUTTON STYLE */
+
+.approve-btn,
+.reject-btn {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    font-weight: 500;
+}
+
+/* COLORS */
+
+.approve-btn {
+    background: green;
+}
+
+.reject-btn {
+    background: red;
+}
+
+/* HOVER */
+
+.approve-btn:hover {
+    background: darkgreen;
+}
+
+.reject-btn:hover {
+    background: darkred;
+}

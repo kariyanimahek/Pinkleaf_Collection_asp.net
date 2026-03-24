@@ -1,37 +1,135 @@
-
-/* PinkLeaf Custom Styles */
-
-/* HEADER STYLES */
-/* ===== HEADER DESIGN (PINKLEAF) ===== */
-
-
-
-
-
-
-
-
-
-
-/*html {
-  font-size: 14px;
+/* ================= PREMIUM HEADER ================= */
+.premium-header {
+    width: 100%;
+    background: #ffffff;
+    padding: 12px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.header-wrapper {
+    display: flex;
+    align-items: center;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* LOGO */
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* RIGHT SIDE GROUP (NAV + ICONS) */
+.right-section {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-body {
-  margin-bottom: 60px;
-}*/
+/* NAVIGATION */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+    .nav-menu a {
+        font-size: 15px;
+        font-weight: 500;
+        color: #5a2d82;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+
+        .nav-menu a:hover {
+            color: #ff4f9a;
+        }
+
+/* USER ICON */
+.icon {
+    font-size: 18px;
+    color: #5a2d82;
+    transition: 0.3s ease;
+}
+
+    .icon:hover {
+        color: #ff4f9a;
+    }
+
+/* ================= CART ICON ================= */
+
+.cart-link {
+    position: relative;
+    font-size: 18px;
+    color: #5a2d82;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+    .cart-link:hover {
+        color: #ff4f9a;
+    }
+
+/* Pink Round Badge */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #ff4f9a;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    padding: 6px 18px;
+    background: #ff4f9a;
+    color: #ffffff;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+    .logout-btn:hover {
+        background: #e600a9;
+    }
+
+/* ================= PREMIUM FOOTER ================= */
+
+.premium-footer {
+    background: linear-gradient(90deg, #e600a9, #ff4fa3);
+    padding: 45px 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-inner h3 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.footer-inner p {
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+.footer-contact h5 {
+    margin-top: 18px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-contact p {
+    margin: 4px 0;
+}
