@@ -1,4 +1,77 @@
-﻿@{
-    ViewData["Title"] = "Wholesale";
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
+
+<link rel="stylesheet" href="~/css/wholesale.css?v=3" />
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+
+        <div class="icon"></div>
+
+        <h1>Pinkleaf Wholesale</h1>
+
+        <p class="desc">
+            Bulk orders with unbeatable prices <br>
+            for retailers and resellers
+        </p>
+
+        <ul>
+            <li>Competitive wholesale pricing</li>
+            <li>Flexible Payments terms</li>
+            <li>Priority Customer Support</li>
+        </ul>
+
+        <div class="contact">
+            <p>CONTACT US</p>
+            <span>Contact Number : +91 82389 45773</span><br>
+            <span>kariyadiyesh@gmail.com</span>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <div class="form-box">
+
+            <label>Full Name</label>
+            <input type="text">
+
+            <label>Company Name</label>
+            <input type="text">
+
+            <label>Email Address</label>
+            <input type="text">
+
+            <label>Phone Number</label>
+            <input type="text">
+
+            <label>Business Address</label>
+            <input type="text">
+
+            <div class="row">
+                <div>
+                    <label>City</label>
+                    <input type="text">
+                </div>
+
+                <div>
+                    <label>State</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <label>GST Number (Optional)</label>
+            <input type="text">
+
+            <button class="submit-btn">Submit Request</button>
+
+        </div>
+
+    </div>
+
+</div>
